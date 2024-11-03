@@ -14,9 +14,11 @@ export default function Home() {
                     <Image style={styles.globo} source={require('../../assets/images/globo.png')}></Image>
                 </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.button}>
-                <Link href="/"><Text style={styles.buttonText}>Pesquise por uma cidade</Text></Link>
-            </TouchableOpacity>
+            <Link style={styles.link} href="/">
+                <View style={styles.button}>
+                    <Text style={styles.buttonText}>Pesquise por uma cidade</Text>
+                </View>
+            </Link>
             <View style={styles.cities}>
                 <Text style={styles.title}>Ao redor do mundo</Text>
                 <View style={styles.boxCities}>
@@ -68,9 +70,11 @@ const styles = StyleSheet.create({
         height:50,
         marginLeft: 150
     },
-    button:{
+    link:{
         marginTop: 63,
         marginBottom: 98,
+      },
+    button:{
         backgroundColor: '#6151c3',
         padding: 10,
         width: 264,

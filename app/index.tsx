@@ -1,4 +1,4 @@
-import { SafeAreaView, Text, View, StyleSheet,TouchableOpacity, Image } from "react-native";
+import { SafeAreaView, Text, View, StyleSheet,TouchableOpacity, Image, Pressable } from "react-native";
 import { Link } from "expo-router";
 
 export default function Index() {
@@ -13,9 +13,11 @@ export default function Index() {
         <Text style={styles.text}>
           Comece agora gratuitamente
         </Text>
-        <TouchableOpacity style={styles.button}>
-          <Link href={'./tabs/home'}><Text style={styles.buttonText}>Vamos lá</Text></Link>
-        </TouchableOpacity>
+        <Link style={styles.link} href={'./tabs/home'}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Vamos lá</Text>
+          </View>
+        </Link>
         <View style={{flexDirection: "row"}}>
         <Text style={styles.text}>
           Já tem uma conta?
@@ -54,22 +56,24 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center'
   },
-  button:{
+  link:{
     marginTop: 64,
     marginBottom: 16,
+  },
+  button:{
     backgroundColor: '#6151c3',
     padding: 10,
     width: 264,
     height: 60,
-    alignItems:'center',
+    alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 30
+    borderRadius: 30,
   },
   buttonText:{
     fontSize: 18,
     color: '#fff',
-  },
 
+  },
   text:{
     fontSize: 14
   },
